@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>NIVESH GYAN | Smart Investment & Financial Planning</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fefcf5;
+            color: #1e2a32;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header & Navigation */
+        .main-header {
+            background: linear-gradient(135deg, #022b3a 0%, #044d5c 100%);
+            color: white;
+            padding: 20px 0 16px;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .logo h1 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+        }
+
+        .logo p {
+            font-size: 0.8rem;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+
+        .tagline {
+            background: rgba(255,215,0,0.2);
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 16px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        .nav-links a i {
+            margin-right: 6px;
+        }
+
+        .nav-links a:hover {
+            color: #ffcd5c;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(115deg, #f1f6f9 0%, #ffffff 100%);
+            padding: 60px 0 50px;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-content {
+            flex: 1.3;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #022b3a;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #cc7b2c;
+            border-left: 4px solid #f4a261;
+            padding-left: 18px;
+            background: #fff2e0;
+            display: inline-block;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
+            margin: 24px 0 18px;
+            color: #2c3e50;
+        }
+
+        .hero-stats {
+            flex: 0.9;
+            background: white;
+            border-radius: 32px;
+            padding: 32px;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+        }
+
+        .stat-item {
+            margin-bottom: 24px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1f6e43;
+        }
+
+        /* Sections */
+        .section {
+            padding: 70px 0 60px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .section-alt {
+            background-color: #fefaf5;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e5631;
+            margin-bottom: 32px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: #f4a261;
+            border-radius: 4px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 20px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 20px;
+            flex: 1 1 250px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+            transition: all 0.2s;
+            border: 1px solid #fff0e0;
+            text-align: center;
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #e07c2c;
+            margin-bottom: 18px;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #022b3a;
+        }
+
+        /* Legal & Contact */
+        .legal-content {
+            background: white;
+            border-radius: 32px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+            border: 1px solid #eee6dc;
+        }
+
+        .legal-content h3 {
+            font-size: 1.6rem;
+            margin: 28px 0 12px;
+            color: #1f6e43;
+        }
+
+        .legal-content h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .legal-content p, .legal-content li {
+            color: #2d3e45;
+            line-height: 1.6;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-top: 20px;
+        }
+
+        .contact-info-box {
+            flex: 1;
+            background: #ffffffea;
+            border-radius: 28px;
+            padding: 32px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            border: 1px solid #f0e3d4;
+        }
+
+        .contact-info-box i {
+            font-size: 2rem;
+            color: #e07c2c;
+            margin-bottom: 16px;
+        }
+
+        .map-placeholder {
+            background: #e9f0e6;
+            border-radius: 28px;
+            padding: 28px;
+            text-align: center;
+            font-style: italic;
+            margin-top: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background: #021f2b;
+            color: #cee0e8;
+            padding: 38px 0 28px;
+            font-size: 0.9rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 18px;
+            border-top: 1px solid #2d5a68;
+            font-size: 0.8rem;
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 1px solid #ffcd5c;
+            color: #ffcd5c;
+            border-radius: 40px;
+            padding: 8px 22px;
+            font-weight: 500;
+            transition: 0.2s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-outline-light:hover {
+            background: #ffcd5c;
+            color: #022b3a;
+        }
+
+        @media (max-width: 780px) {
+            .hero-content h2 { font-size: 1.9rem; }
+            .nav-links { gap: 18px; }
+            .legal-content { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="container">
+        <div class="logo-area">
+            <div class="logo">
+                <h1>NIVESH GYAN</h1>
+                <p>Smart Financial Growth & Security</p>
+            </div>
+            <div class="tagline">
+                <i class="fas fa-chart-line"></i> Your Partner in Wealth Creation
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+            <a href="#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+            <a href="#terms"><i class="fas fa-file-signature"></i> Terms & Conditions</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- HOME SECTION -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h2>Smart Investments. <br> <span class="highlight">Secure Future.</span></h2>
+                <p><strong>NIVESH GYAN</strong> is a trusted financial services company dedicated to helping individuals and families achieve their financial goals through smart investment planning. We offer a wide range of investment solutions, including Mutual Funds, Bonds, and Life Insurance, tailored to meet the unique needs of our clients.</p>
+                <p>Our mission is to simplify financial planning and provide expert guidance that empowers investors to make informed decisions. Whether you are looking to build wealth, secure your family's future, generate stable returns, or plan for long-term financial security, our experienced team is committed to supporting you at every step. At NIVESH GYAN, we believe in transparency, trust, and a customer-first approach, ensuring that every investment strategy aligns with your financial objectives and risk profile.</p>
+                <div style="background:#f2e8dd; border-radius: 24px; padding: 16px 20px; margin-top: 20px;">
+                    <i class="fas fa-map-marker-alt" style="color:#cc7b2c;"></i> Bizpole-2nd Floor, Falcon Complex, Opposite HPCL Petrol Bunk, Nurani, Palakkad, Kerala - 678014<br>
+                    <i class="fas fa-phone-alt"></i> +91 6377853706 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> sharmagyanendra164@gmail.com
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">500+</span><br>Happy Investors</div>
+                <div class="stat-item"><span class="stat-number">8+ Years</span><br>Industry Expertise</div>
+                <div class="stat-item"><span class="stat-number">100%</span><br>Transparent Approach</div>
+                <div class="stat-item"><span class="stat-number">20+</span><br>Financial Products</div>
+                <a href="#contact" class="btn-outline-light" style="margin-top: 12px; display: inline-block;"><i class="fas fa-handshake"></i> Talk to an Expert</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION (detailed) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Financial Services</h2>
+            <div class="services-grid">
+                <div class="service-card"><i class="fas fa-chart-pie"></i><h3>Mutual Funds</h3><p>Diversified portfolios for long-term wealth creation.</p></div>
+                <div class="service-card"><i class="fas fa-chart-line"></i><h3>Bonds & Fixed Income</h3><p>Stable returns & capital protection strategies.</p></div>
+                <div class="service-card"><i class="fas fa-shield-alt"></i><h3>Life Insurance</h3><p>Secure your family’s financial future.</p></div>
+                <div class="service-card"><i class="fas fa-rocket"></i><h3>Wealth Creation</h3><p>High-growth investment roadmaps.</p></div>
+                <div class="service-card"><i class="fas fa-bullseye"></i><h3>Goal Planning</h3><p>Retirement, child education & more.</p></div>
+                <div class="service-card"><i class="fas fa-umbrella"></i><h3>Retirement Planning</h3><p>Peaceful retired life with strategic plans.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRIVACY POLICY -->
+    <section id="privacy" class="section section-alt">
+        <div class="container">
+            <div class="legal-content">
+                <h2 class="section-title" style="margin-bottom: 24px;">Privacy Policy</h2>
+                <p><strong>Effective Date:</strong> 1st June 2026</p>
+                <p>At NIVESH GYAN, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your data when you interact with our website or financial services.</p>
+                
+                <h3>Information Collection</h3>
+                <p>We may collect personal information such as name, contact details, email address, PAN, financial information, and investment preferences when you register, enquire, or use our advisory services. Additionally, we collect non-personal data like IP addresses and browsing patterns for service improvement.</p>
+                
+                <h3>Use of Information</h3>
+                <p>Your data enables us to: provide personalized investment advice, process transactions, send updates, improve our offerings, and comply with regulatory requirements (e.g., KYC norms). We do not sell or rent personal data to third parties.</p>
+                
+                <h3>Data Security</h3>
+                <p>We implement industry-standard security measures including encryption, secure servers, and access controls. However, no internet transmission is 100% secure; we encourage clients to keep login details confidential.</p>
+
+                <h3>Third-Party Disclosure</h3>
+                <p>We may share data with registered intermediaries (AMCs, insurance companies) only to execute your investments. We never share data for marketing unrelated to financial services.</p>
+
+                <h3>Contact Us</h3>
+                <p>For privacy concerns: <strong>sharmagyanendra164@gmail.com</strong> or +91 6377853706.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TERMS & CONDITIONS -->
+    <section id="terms" class="section">
+        <div class="container">
+            <div class="legal-content">
+                <h2 class="section-title" style="margin-bottom: 24px;">Terms & Conditions</h2>
+                <p>Welcome to the official website of NIVESH GYAN. By accessing, browsing, or using our website and services, you agree to abide by these Terms & Conditions. If you disagree, please do not use our services.</p>
+                
+                <h3>Use of Content</h3>
+                <p>All content, logos, trademarks, and materials on this site are the property of NIVESH GYAN. Unauthorized reproduction, distribution, or commercial use is prohibited. You may view content for personal, non-commercial informational purposes.</p>
+                
+                <h3>Investment Advisory</h3>
+                <p>Our recommendations are based on research and your stated risk profile. Past performance does not guarantee future returns. All investment decisions are your sole responsibility. We strongly recommend reading scheme-related documents carefully before investing.</p>
+                
+                <h3>Limitation of Liability</h3>
+                <p>NIVESH GYAN shall not be liable for any direct, indirect, incidental, or consequential losses arising from the use of our advice, market volatility, or technical errors on the website. We strive for accuracy but do not warrant completeness.</p>
+                
+                <h3>Governing Law</h3>
+                <p>These terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in Palakkad, Kerala.</p>
+                <p style="margin-top: 20px;">For questions, write to <strong>sharmagyanendra164@gmail.com</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT PAGE -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Connect With Us</h2>
+            <div class="contact-details">
+                <div class="contact-info-box">
+                    <i class="fas fa-building"></i>
+                    <h3>Our Office</h3>
+                    <p><strong>NIVESH GYAN</strong><br>
+                    Bizpole-2nd Floor, Falcon Complex,<br>
+                    Opposite HPCL Petrol Bunk, Nurani,<br>
+                    Palakkad, Kerala - 678014</p>
+                    <hr style="margin: 18px 0; opacity:0.2">
+                    <p><i class="fas fa-phone-alt"></i> +91 6377853706<br>
+                    <i class="fas fa-envelope"></i> sharmagyanendra164@gmail.com<br>
+                    <i class="fas fa-clock"></i> Mon-Fri: 10:00 AM – 6:30 PM</p>
+                </div>
+                <div class="contact-info-box">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Schedule a Consultation</h3>
+                    <p>Whether you're starting your investment journey or need portfolio review, our certified advisors are here to help. Reach out via call or email — we typically respond within 24 hours.</p>
+                    <p style="margin-top: 20px;"><i class="fas fa-rupee-sign"></i> <strong>Free initial consultation</strong> for first-time clients.</p>
+                    <div class="map-placeholder">
+                        <i class="fas fa-location-dot"></i> 📍 Locate: Falcon Complex, Nurani, Palakkad (Near HPCL Petrol Bunk)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER with Copyright 2026 -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div>
+                <h3 style="color:#ffcd5c; margin-bottom: 12px;">NIVESH GYAN</h3>
+                <p>Your trusted partner for mutual funds, bonds, life insurance & holistic financial planning.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 8px;">Explore</h4>
+                <ul style="list-style: none; line-height: 1.8;">
+                    <li><a href="#home" style="color:#cee0e8; text-decoration: none;">Home</a></li>
+                    <li><a href="#privacy" style="color:#cee0e8; text-decoration: none;">Privacy Policy</a></li>
+                    <li><a href="#terms" style="color:#cee0e8; text-decoration: none;">Terms & Conditions</a></li>
+                    <li><a href="#contact" style="color:#cee0e8; text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 8px;">Reach Out</h4>
+                <p><i class="fas fa-phone-alt"></i> +91 6377853706</p>
+                <p><i class="fas fa-envelope"></i> sharmagyanendra164@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Palakkad, Kerala - 678014</p>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            © 2026 NIVESH GYAN. All Rights Reserved. | Designed with transparency & trust. | Investments are subject to market risks.
+        </div>
+    </div>
+</footer>
+
+<!-- Smooth scrolling for anchor links -->
+<script>
+    document.querySelectorAll('.nav-links a, footer a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if(targetId && targetId.startsWith('#')) {
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    history.pushState(null, null, targetId);
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
